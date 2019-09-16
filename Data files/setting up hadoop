@@ -1,0 +1,27 @@
+setting up hadoop
+
+
+sudo apt install openjdk-8-jre
+sudo apt install openjdk-8-jdk
+sudo apt install ssh
+sudo apt install rsync
+sudo update-alternatives --config java
+
+/usr/bin/java
+/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
+
+sudo addgroup hadoop
+sudo adduser –ingroup hadoop hduser look at the subtle difference of the dash -- that is incorrect ffs
+
+sudo adduser -ingroup hadoop hduser
+
+
+sudo usermod -aG sudo hduser
+sudo usermod -aG vboxsf hduser
+
+su - hduser
+
+ssh-keygen -t rsa -P ""
+
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys

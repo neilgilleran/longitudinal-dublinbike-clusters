@@ -1,0 +1,6 @@
+
+You need to install jq
+https://stedolan.github.io/jq/download/
+
+curl -s https://api.citybik.es/v2/networks/dublinbikes | jq -r '.network.stations[] | 
+[.extra.uid, .name, .latitude, .longitude] | @csv' >> 'dublinbikesgeolocations.csv'
